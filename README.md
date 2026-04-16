@@ -1,4 +1,4 @@
-# notify-bridge
+# awesome-notify-bridge
 
 Reusable notification helpers for Telegram Bot API and Discord webhook.
 
@@ -6,6 +6,7 @@ Reusable notification helpers for Telegram Bot API and Discord webhook.
 
 ```bash
 pip install notify-bridge
+
 ```
 
 For local development:

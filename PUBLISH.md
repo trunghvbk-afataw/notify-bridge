@@ -34,7 +34,7 @@ python -m twine upload dist/*
 ## 5. Verify installation
 
 ```bash
-python -m pip install notify-bridge
+python -m pip install awesome-notify-bridge
 python -c "import notify_bridge; print(notify_bridge.__all__)"
 ```
 
