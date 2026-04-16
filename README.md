@@ -20,6 +20,14 @@ send_telegram_message(
     text="Hello from your bot!"
 )
 
+# Send a Telegram message with images
+send_telegram_message(
+    chat_id="-1001234567890",
+    token="your-bot-token",
+    text="Chart update",
+    image_paths=["/path/to/chart.png"]
+)
+
 # Send a Discord message
 send_discord_message(
     webhook_url="https://discord.com/api/webhooks/...",
@@ -29,24 +37,27 @@ send_discord_message(
 
 ## API Reference
 
-### `send_telegram_message(chat_id, token, text, **kwargs)`
+### `send_telegram_message(chat_id, token, text, image_paths)`
 
-Sends a text message to a Telegram chat using the Bot API.
+Sends a text message (and optional images) to a Telegram chat using the Bot API.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `chat_id` | `str` | Target chat ID (group, channel, or private) |
-| `token` | `str` | Telegram bot token from @BotFather |
-| `text` | `str` | Message content |
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `chat_id` | `str` | required | Target chat ID (group, channel, or private) |
+| `token` | `str` | required | Telegram bot token from @BotFather |
+| `text` | `str` | `""` | Message content. Long messages are split automatically |
+| `image_paths` | `list[str]` | `None` | Local file paths of images to send after the text |
 
-### `send_discord_message(webhook_url, content, **kwargs)`
+### `send_discord_message(webhook_url, content, image_paths, logger)`
 
 Posts a message to a Discord channel via webhook.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `webhook_url` | `str` | Discord webhook URL |
-| `content` | `str` | Message content |
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `webhook_url` | `str` | required | Discord webhook URL |
+| `content` | `str` | required | Message content. Long messages are split automatically |
+| `image_paths` | `list[str]` | `None` | Local file paths of images to attach |
+| `logger` | `Callable` | `None` | Optional callback for logging send status |
 
 ## Links
 
