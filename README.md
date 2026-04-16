@@ -2,10 +2,13 @@
 
 Reusable notification helpers for Telegram Bot API and Discord webhook.
 
+- PyPI package: `awesome-notify-bridge`
+- Import path: `notify_bridge`
+
 ## Install
 
 ```bash
-pip install notify-bridge
+pip install awesome-notify-bridge
 
 ```
 
@@ -23,6 +26,11 @@ from notify_bridge import send_discord_message, send_telegram_message
 send_discord_message(webhook_url="https://discord.com/api/webhooks/...", content="Hello from bot")
 send_telegram_message(chat_id="-1001234567890", token="<bot-token>", text="Hello from bot")
 ```
+
+## Project Links
+
+- Repository: https://github.com/trunghvbk-afataw/notify-bridge
+- Issues: https://github.com/trunghvbk-afataw/notify-bridge/issues
 
 ## Design Notes
 
